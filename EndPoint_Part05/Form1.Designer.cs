@@ -1,4 +1,4 @@
-﻿namespace EndPoint_Part05
+namespace EndPoint_Part05
 {
     partial class Form1
     {
@@ -31,8 +31,8 @@
             this.Grid = new System.Windows.Forms.DataGridView();
             this.BtnShow = new System.Windows.Forms.Button();
             this.BtnDisplayOrders = new System.Windows.Forms.Button();
-            this.successButton1 = new EndPoint_Part05.CustomControl.SuccessButton();
             this.BtnPersonDTO = new System.Windows.Forms.Button();
+            this.successButton1 = new EndPoint_Part05.CustomControl.SuccessButton();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,12 +44,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(10, 135);
+            this.Grid.Location = new System.Drawing.Point(10, 260);
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
             this.Grid.RowHeadersWidth = 51;
             this.Grid.RowTemplate.Height = 24;
-            this.Grid.Size = new System.Drawing.Size(1339, 483);
+            this.Grid.Size = new System.Drawing.Size(1339, 358);
             this.Grid.TabIndex = 0;
             // 
             // BtnShow
@@ -74,6 +74,17 @@
             this.BtnDisplayOrders.UseVisualStyleBackColor = true;
             this.BtnDisplayOrders.Click += new System.EventHandler(this.BtnDisplayOrders_Click);
             // 
+            // BtnPersonDTO
+            // 
+            this.BtnPersonDTO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnPersonDTO.Location = new System.Drawing.Point(595, 23);
+            this.BtnPersonDTO.Name = "BtnPersonDTO";
+            this.BtnPersonDTO.Size = new System.Drawing.Size(230, 94);
+            this.BtnPersonDTO.TabIndex = 4;
+            this.BtnPersonDTO.Text = "نمایش اطلاعات خاص اشخاص";
+            this.BtnPersonDTO.UseVisualStyleBackColor = true;
+            this.BtnPersonDTO.Click += new System.EventHandler(this.BtnPersonDTO_Click);
+            // 
             // successButton1
             // 
             this.successButton1.BackColor = System.Drawing.Color.Green;
@@ -85,17 +96,6 @@
             this.successButton1.Text = "successButton1";
             this.successButton1.UseVisualStyleBackColor = false;
             this.successButton1.Click += new System.EventHandler(this.SuccessButton1_Click);
-            // 
-            // BtnPersonDTO
-            // 
-            this.BtnPersonDTO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnPersonDTO.Location = new System.Drawing.Point(595, 23);
-            this.BtnPersonDTO.Name = "BtnPersonDTO";
-            this.BtnPersonDTO.Size = new System.Drawing.Size(230, 94);
-            this.BtnPersonDTO.TabIndex = 4;
-            this.BtnPersonDTO.Text = "نمایش اطلاعات خاص اشخاص";
-            this.BtnPersonDTO.UseVisualStyleBackColor = true;
-            this.BtnPersonDTO.Click += new System.EventHandler(this.BtnPersonDTO_Click);
             // 
             // Form1
             // 
