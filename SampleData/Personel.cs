@@ -1,4 +1,4 @@
-﻿using Basic = Models.Personel;
+using Basic = Models.Personel;
 using Adv = Models.Personel_Adv;
 using System;
 using System.Collections.Generic;
@@ -40,6 +40,13 @@ namespace SampleData
                          ID = 1 ,
                          Number = "09121212121",
                          TelephoneType = Basic.EnTelephoneType.Mobile
+                     },
+                     new Basic.Telephone { 
+                         ID = 2 ,
+                         Number ="02122252525",
+                         TelephoneType= Basic.EnTelephoneType.Office
+                     
+                     
                      }
                  }
 
