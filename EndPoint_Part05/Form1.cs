@@ -1,4 +1,4 @@
-﻿using EndPoint_Part05.CustomControl;
+using EndPoint_Part05.CustomControl;
 using Models.Shopping;
 using System;
 using System.Windows.Forms;
@@ -7,6 +7,8 @@ using Models.Personel;
 using System.Linq;
 using System.Drawing;
 using ViewModels.Personel;
+using Basic = Models.Personel;
+using System.Data;
 
 namespace EndPoint_Part05
 {
@@ -22,34 +24,76 @@ namespace EndPoint_Part05
             Button button = new Button();
 
             Button button1 = new SuccessButton();
+          
+            Grid.CellClick += DataGridView_CellClick;
 
-            /*
-            foreach (var item in groupBox1.Controls)
+
+        }
+        ///////////////////////////////////////////////////////////////////
+        private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
             {
-                if (item is Label)
-                {
 
-                }
+                var selectedPerson = Grid.Rows[e.RowIndex].DataBoundItem as Basic.Person;
 
-                if (item is Button)
-                {
 
-                }
+                ClearOrHidePreviousGridContent();
+
+                DisplayTelephoneAndEmailInformation(selectedPerson);
             }
-            */
         }
 
+
+
+        private DataGridView telephoneAndEmailDataGridView;
+
+        private void DisplayTelephoneAndEmailInformation(Basic.Person person)
+        {
+            telephoneAndEmailDataGridView = new DataGridView();
+            telephoneAndEmailDataGridView.AutoGenerateColumns = true;
+            telephoneAndEmailDataGridView.DataSource = person.Telephones;
+  
+            telephoneAndEmailDataGridView.Location = new Point(52,100); 
+            telephoneAndEmailDataGridView.Size = new Size(345,80);
+     
+            telephoneAndEmailDataGridView.Dock = DockStyle.None;
+            
+            Controls.Add(telephoneAndEmailDataGridView);
+
+        }
+
+        private void ClearOrHidePreviousGridContent()
+        {
+            if (telephoneAndEmailDataGridView != null)
+            {
+                Controls.Remove(telephoneAndEmailDataGridView);
+                telephoneAndEmailDataGridView.Dispose();
+            }
+            else if (Grid.DataSource is DataTable dataTable)
+            {
+                dataTable.Rows.Clear();
+            }
+            else
+            {
+                Grid.DataSource = null;
+            }
+        }
+
+
+
+
+        /////////////////////////////////////////////////////////////////
         private void BtnShow_Click(object sender, EventArgs e)
         {
-            //Models.Personel_Adv.Person[] people = SampleData.Personel.GetPeopleYasamin();
 
             var people = SampleData.Personel.GetPeople();
 
             Grid.DataSource = people;
 
-            var resultInText = people.PrintMe<Person>();
+           // var resultInText = people.PrintMe<Person>();
 
-            MessageBox.Show(resultInText);
+            //MessageBox.Show(resultInText);
 
         }
 
